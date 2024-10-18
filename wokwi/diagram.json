@@ -1,0 +1,51 @@
+{
+    "version": 1,
+    "author": "Moises Stevend Meza Rodriguez",
+    "editor": "wokwi",
+    "parts": [
+      { "type": "wokwi-pi-pico", "id": "pico", "top": -12.75, "left": 90, "attrs": {} },
+      {
+        "type": "wokwi-slide-potentiometer",
+        "id": "pot1",
+        "top": -14.2,
+        "left": -154.6,
+        "attrs": { "travelLength": "30" }
+      },
+      {
+        "type": "wokwi-slide-potentiometer",
+        "id": "pot2",
+        "top": 120.2,
+        "left": -154.6,
+        "attrs": { "travelLength": "30" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r1",
+        "top": 61.55,
+        "left": 268.8,
+        "attrs": { "value": "1000" }
+      },
+      {
+        "type": "wokwi-led",
+        "id": "led1",
+        "top": 85.6,
+        "left": 289.4,
+        "rotate": 270,
+        "attrs": { "color": "blue" }
+      }
+    ],
+    "connections": [
+      [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+      [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+      [ "pot1:VCC", "pico:3V3_EN", "red", [ "h-19.2", "v-86.4", "h384", "v76.8" ] ],
+      [ "pot1:GND", "pico:GND.8", "black", [ "v-67.2", "h187.6", "v86.4" ] ],
+      [ "pot1:SIG", "pico:GP26", "green", [ "h-28.8", "v200.8", "h441.6", "v-172.8" ] ],
+      [ "pot2:GND", "pot1:GND", "black", [ "v0" ] ],
+      [ "pot2:VCC", "pot1:VCC", "red", [ "h-19.2", "v-124.8" ] ],
+      [ "pot2:SIG", "pico:GP27", "green", [ "h-19.2", "v37.6", "h393.6", "v-153.6" ] ],
+      [ "pico:GP22", "r1:1", "green", [ "h78", "v-38.4" ] ],
+      [ "r1:2", "led1:A", "green", [ "v0" ] ],
+      [ "led1:C", "pico:GND.8", "green", [ "h0", "v18.8", "h-96", "v-115.2" ] ]
+    ],
+    "dependencies": {}
+  }
