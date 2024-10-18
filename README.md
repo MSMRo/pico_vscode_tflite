@@ -15,4 +15,5 @@ debes crear la circuiteria en la página de Wokwi luego copias su archivo .json 
 
 Imágen del resultado final:
 
-![imgen](./img/rpico_vscode1.PNG)
+![Final](./img/rpico_vscode1.PNG)
+![Prueba circuiteria](./img/code_test_pico.PNG)
